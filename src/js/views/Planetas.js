@@ -31,7 +31,7 @@ export const Planetas = () => {
             <Cards titulo="Atras" ruta="/" boton="Volver atrás"/>
 
 
-    </div> */}
+    </div> 
 
 
-);
+);*/}

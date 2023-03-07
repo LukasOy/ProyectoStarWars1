@@ -7,6 +7,7 @@ export const Cards = (props) => {
     <div className="card">
       <div className="card-body">
         <h5 className="card-title">{props.title}</h5>
+        <img src={props.imagen}></img>
         <Link to={props.ruta}>
         <a href="#" class="btn btn-primary">
           {props.boton}
