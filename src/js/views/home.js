@@ -5,13 +5,53 @@ import gg2 from "../../img/gg2.jpg";
 import gg3 from "../../img/gg3.jpg";
 import "../../styles/home.css";
 import { Cards } from "../component/cards";
+import { LongCards } from "../component/cards";
 
 export const Home = () => {
-  const { store } = useContext(Context);
 
+  const {store, actions} = useContext(Context)
+  
   return (
     <div className="container">
-      <div
+      <div className="text-center">
+        <h1> Planetas </h1>
+        <div className="row">
+          <div className="col">
+            <Cards titulo="Planeta1" ruta="./planetas" boton="Learn More!" />
+          </div>
+         
+        </div>
+      </div> 
+
+      <div className="text-center">
+        <h1>Personajes </h1>
+        <div className="row">
+        {store.PersonDetalle.map((objeto, index)=>{
+        
+        return (
+        <Cards title={objeto.name} id={objeto.uid} ruta={"/detalle/persondetalle/"+ objeto.uid} boton="Learn More!"/>
+        
+        )
+        })}
+        </div>
+      </div> 
+    </div>
+  );
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* <div  CARRUSEL QUE NO ES NECESARIO 
         id="carouselExampleSlidesOnly"
         className="carousel slide"
         data-bs-ride="carousel"
@@ -27,13 +67,4 @@ export const Home = () => {
             <img src={gg3} className="d-block w-100 " alt="..." />
           </div>
         </div>
-      </div>
-
-      <div className="text-center">
-        <Cards title="Planetas" ruta="/planetas" boton="Ir" imagen="https://www.eltiempo.com/files/image_1200_680/uploads/2019/05/30/5cefe1834f1f9.jpeg" />
-        <Cards title="Personajes" ruta="/personaje" boton="Ir" imagen="https://i0.wp.com/www.lacasadeel.net/wp-content/uploads/2022/04/skywalkersaga.jpeg?resize=1068%2C623&ssl=1" />
-      </div> 
-
-    </div>
-  );
-};
+      </div> */}
